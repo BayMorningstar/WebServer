@@ -1,0 +1,17 @@
+{
+    "name": "node-ex-website",
+    "version": "1.0.0",
+    "description": "MyNodeWebPage",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "@octokit/core": "^3.5.1",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "express-state": "^2.0.0",
+        "express3-handlebars": "^0.5.2",
+        "programming-languages-logos": "^0.0.3",
+        "vue": "^3.2.31"
+    }
+}
