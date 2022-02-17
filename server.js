@@ -2,9 +2,10 @@ const http = require('http');
 var express = require('express');
 const path = require('path');
 app = express();
-app.use(express.json());
+
 var https = require("https");
-app.use(express.static("18.217.70.29"));
+app.use(express.static("localhost.com"));
+app.use(express.json());
 app.set('view engine', 'ejs');
 app.get('/', function(req,res){
   var userName='BayMorningstar';
@@ -22,12 +23,8 @@ app.get('/', function(req,res){
     response.on('end',function(){
         var json = JSON.parse(body);
         var repos =[];
+        console.log(json)
         json.forEach(function(repo){
-            console.log(repo.name)
-            console.log(repo.description)
-            console.log(repo.created_at)
-            console.log(repo.html_url)
-            console.log(repo.language)
             repos.push({
                 name : repo.name,
                 description : repo.description,
@@ -35,10 +32,10 @@ app.get('/', function(req,res){
                 url : repo.html_url,
                 lang : repo.language
             });
+        
         });
         res.render(__dirname + "/express/index", {my_repos : JSON.stringify(repos)});
     });
-   
 });
 request.on('error', function(e) {
     console.error('and the error is '+e);
@@ -48,7 +45,7 @@ request.end();
 
 });
 const server = http.createServer(app);
-const port = 80;
+const port = 5000;
 server.listen(port);
 console.debug('Server listening on port ' + port);
 

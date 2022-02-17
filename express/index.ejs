@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
 
 <style>
 .w3-row.custom-flex  {display: inline-flex; flex-wrap: wrap;}
@@ -50,14 +51,14 @@ body {font-family: "Lato", sans-serif}
 
     <!-- Automatic Slideshow Images -->
     <div class="mySlides w3-display-container w3-center">
-        <img src="https://www.w3schools.com/w3images/la.jpg" style="width:100%">
+        <img src="https://wallpaperaccess.com/full/1695703.jpg" style="width: 100% ">
         <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
         <h3>Los Angeles</h3>
         <p><b>Mühendislik çok zor bir iştir. - Hal Goldberg</b></p>   
         </div>
     </div>
     <div class="mySlides w3-display-container w3-center">
-        <img src="https://www.w3schools.com/w3images/ny.jpg" style="width:100%">
+        <img src="https://wallpaperaccess.com/full/1695710.jpg" style="width:100%">
         <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
         <h3>New York</h3>
         <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
@@ -92,50 +93,47 @@ body {font-family: "Lato", sans-serif}
             const myObj = JSON.parse(my_repo);
             url = myObj[0]["url"];
             url1 = myObj[1]["url"];
-            url2 = myObj[3]["url"];
-            
+            url2 = myObj[3]["url"];       
             function golink1(url){window.open(url,'_blank','resizable=yes')}
+            function push(){
+            for(let i = 0; i <= 3; i++){
+            console.log(myObj[i]["lang"])
+            document.getElementById("name" + i).innerHTML=myObj[i]["name"];
+            document.getElementById("date" + i).innerHTML=new Date(myObj[i]["date"]).toDateString() 
+            document.getElementById("des" + i).innerHTML=myObj[i]["description"];
+            document.getElementById('make-image' + i).src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/" + myObj[i]["lang"].toLowerCase() + "/" + myObj[i]["lang"].toLowerCase() + ".png";
+            }
+            }
             window.onload = function() {
-            document.getElementById("name").innerHTML=myObj[0]["name"];
-            document.getElementById("date").innerHTML=new Date(myObj[0]["date"]).toLocaleString();
-            document.getElementById("des").innerHTML=myObj[0]["description"];
-            document.getElementById("name1").innerHTML=myObj[1]["name"];
-            document.getElementById("date1").innerHTML=new Date(myObj[1]["date"]).toLocaleString();
-            document.getElementById("des1").innerHTML=myObj[1]["description"];
-            document.getElementById("name2").innerHTML=myObj[3]["name"];
-            document.getElementById("date2").innerHTML=new Date(myObj[3]["date"]).toLocaleString();
-            document.getElementById("des2").innerHTML=myObj[3]["description"];
-            document.getElementById('make-image').src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/" + myObj[0]["lang"].toLowerCase() + "/" + myObj[0]["lang"].toLowerCase() + ".png";
-            document.getElementById('make-image1').src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/" + myObj[1]["lang"].toLowerCase() + "/" + myObj[1]["lang"].toLowerCase() + ".png";
-            document.getElementById('make-image2').src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/" + myObj[3]["lang"].toLowerCase() + "/" + myObj[3]["lang"].toLowerCase() + ".png";
-        }
+                push();
+            }
         </script>
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
         <h2 class="w3-wide w3-center">Github</h2>
         <p class="w3-opacity w3-center"><i>Gözatabilirsin!</i></p><br>
         <div class="w3-row custom-flex w3-row-padding ">
             <div class="w3-third w3-margin-bottom" style="text-align: center ;">
-            <img id = "make-image" src="" alt="New York" style="width:80%; max-height:186px;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
+            <img id = "make-image0" src="" alt="New York" style="width:50%; height: 113px; " class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
             <div class="w3-container w3-white">
-                <p style=""><b id = "name"></b></p>
-                <p id = "date" class="w3-opacity"></p>
-                <p id = "des" style="min-height: 100px;"></p>
-                <button class="w3-button w3-black w3-margin-bottom" onclick="golink1(url)">Linke git</button>
+                <p style="font-family: Jura;" ><b id = "name0"></b></p>
+                <p id = "date0" class="w3-opacity"></p>
+                <p id = "des0" style="min-height: 100px;"></p>
+                <button class="w3-button w3-black w3-margin-bottom" onclick="golink(url)">Linke git</button>
             </div>
             </div>
             <div class="w3-third  w3-margin-bottom" style="text-align: center;">
-            <img id = "make-image1" src="" alt="Paris" style="width:80%; max-height:186px;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
+            <img id = "make-image1" src="" alt="Paris" style="width:50%; height: 113px;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
             <div class="w3-container w3-white">
-                <p id = "name1"><b></b></p>
+                <p style="font-family: Jura;" ><b id = "name1"></b></p>
                 <p id = "date1" class="w3-opacity"></p>
                 <p id = "des1" style="min-height: 100px;"></p>
                 <button class="w3-button w3-black w3-margin-bottom" onclick="golink1(url1)">Linke git</button>
             </div>
             </div>
             <div class="w3-third w3-margin-bottom " style="text-align: center;">
-            <img id = "make-image2" src="" alt="San Francisco" style="width:80%; max-height:186px;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
+            <img id = "make-image2" src="" alt="San Francisco" style="width:50%; height: 113px;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
             <div class="w3-container w3-white">
-                <p id = "name2"><b></b></p>
+                <p style="font-family: Jura;" ><b id = "name2"></b></p>
                 <p id = "date2" class="w3-opacity"></p>
                 <p id = "des2" style="min-height: 100px;"></p>
                 <button class="w3-button w3-black w3-margin-bottom" onclick="golink1(url2)">Linke git</button>
@@ -146,28 +144,49 @@ body {font-family: "Lato", sans-serif}
     </div>
     <!-- The iletisim Section -->
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="iletisim">
-        <h2 class="w3-wide w3-center">İletişim</h2>
+        <h2 class="w3-wide w3-center">İletişim Kur</h2>
         <p class="w3-opacity w3-center"><i>Gönder Gelsin</i></p>
         <div class="w3-row w3-padding-32">
         <div class="w3-col m6 w3-large w3-margin-bottom">
             <i class="fa fa-map-marker" style="width:30px"></i> Muğla, TR<br>
             <i class="fa fa-phone" style="width:30px"></i> -<br>
-            <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+            <i class="fa fa-envelope" style="width:30px"> </i> Email: halim.ceylan8@gmail.com<br>
         </div>
         <div class="w3-col m6">
-            <form action="/action_page.php" target="_blank">
             <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                 <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                <input id = "name" class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
                 </div>
                 <div class="w3-half">
-                <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                <input id = "mail" class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
                 </div>
             </div>
-            <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-            <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
-            </form>
+            <input id="mailmessage" class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+            <button class="w3-button w3-black w3-section w3-right" onclick="sendMail()" type="submit">SEND</button>
+            <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+            </script>
+            <script type="text/javascript">
+            (function(){
+                emailjs.init("user_e8xCHWu1s2nDC0ySNvUv0");
+            })(); 
+            function sendMail(){
+            var templateParams = {
+            name : document.getElementById("name").value,
+            mail: document.getElementById("mail").value,
+            message: document.getElementById("mailmessage").value,
+            };
+            console.log(templateParams)
+            emailjs.send('my_website', 'template_j9cxvof', templateParams)
+            .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+            console.log('FAILED...', error);
+            });
+            }
+            </script>
         </div>
+        
         </div>
     </div>
     
@@ -175,7 +194,7 @@ body {font-family: "Lato", sans-serif}
     </div>
 
     <!-- Image of location/map -->
-    <img src="https://www.w3schools.com/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
+    <!-- img src="https://www.w3schools.com/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%" -->
 
     <!-- Footer -->
     <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
