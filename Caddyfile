@@ -1,7 +1,0 @@
-halimceylan.com {
-	reverse_proxy 127.0.0.1:3000
-}
-
-www.halimceylan.com {
-	reverse_proxy 127.0.0.1:3000
-}
