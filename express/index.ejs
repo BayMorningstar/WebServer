@@ -163,6 +163,8 @@ body {font-family: "Lato", sans-serif}
             </div>
             <input id="mailmessage" class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
             <button class="w3-button w3-black w3-section w3-right" onclick="sendMail()" type="submit">SEND</button>
+            <div class="g-recaptcha" data-sitekey="6LeT34ceAAAAAEg4H3rYIrPF4yoMkvZZ1CQiwuqo"></div>
+            
             <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
             </script>
@@ -185,6 +187,7 @@ body {font-family: "Lato", sans-serif}
             });
             }
             </script>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         </div>
         
         </div>
