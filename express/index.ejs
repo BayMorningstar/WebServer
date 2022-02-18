@@ -144,6 +144,7 @@ body {font-family: "Lato", sans-serif}
     </div>
     <!-- The iletisim Section -->
     <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="iletisim">
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <h2 class="w3-wide w3-center">İletişim Kur</h2>
         <p class="w3-opacity w3-center"><i>Gönder Gelsin</i></p>
         <div class="w3-row w3-padding-32">
@@ -162,9 +163,8 @@ body {font-family: "Lato", sans-serif}
                 </div>
             </div>
             <input id="mailmessage" class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-            <button class="w3-button w3-black w3-section w3-right" onclick="sendMail()" type="submit">SEND</button>
+            <button class="w3-button w3-black w3-section w3-right" onclick="sendMail()"type="submit" value="Submit">SEND</button>
             <div class="g-recaptcha" data-sitekey="6LeT34ceAAAAAEg4H3rYIrPF4yoMkvZZ1CQiwuqo"></div>
-            
             <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
             </script>
@@ -173,6 +173,9 @@ body {font-family: "Lato", sans-serif}
                 emailjs.init("user_e8xCHWu1s2nDC0ySNvUv0");
             })(); 
             function sendMail(){
+            if (grecaptcha.getResponse() == ""){
+                alert("please verify you are not a robot!");
+            } else {
             var templateParams = {
             name : document.getElementById("name").value,
             mail: document.getElementById("mail").value,
@@ -186,8 +189,10 @@ body {font-family: "Lato", sans-serif}
             console.log('FAILED...', error);
             });
             }
+}
+          
             </script>
-            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+            
         </div>
         
         </div>
@@ -200,14 +205,17 @@ body {font-family: "Lato", sans-serif}
     <!-- img src="https://www.w3schools.com/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%" -->
 
     <!-- Footer -->
-    <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    <footer class="w3-container w3-center w3-opacity w3-xlarge">
+        <div class="attendee_bottom">
+            <p style="margin-bottom: 20px;margin-top: 40px;">Contact Me</p>
+            <div class="reference-icons" style="padding-bottom: 60px;">
+            <a href="https://www.linkedin.com/in/halim-ceylan-36b55a1b2/" class="icon" target="_blank" data-on-event="send,event,social,click-post-attendee-page-linkedin,Post-Attendee Page Linkedin"><img src="https://st1.zoom.us/static/94172/image/new/home/IconLinkedIn.png" alt="LinkedIn"></a>
+            <a href="https://twitter.com/zoom" class="icon" target="_blank" data-on-event="send,event,social,click-post-attendee-page-twitter,Post-Attendee Page Twitter"><img src="https://st1.zoom.us/static/94172/image/new/home/IconTwitter.png" alt="Twitter"></a>
+            <a href="" class="icon" target="_blank" data-on-event="send,event,social,click-post-attendee-page-facebook,Post-Attendee Page Facebook"><img src="https://st1.zoom.us/static/94172/image/new/home/IconFacebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/halimceylan" class="icon" target="_blank"><img style="width:36px; height: 36px;margin-left: 5px;" src="https://st3.zoom.us/static/94172/image/new/home/IconInstagram.png" alt="Instagram"></a>
+            <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+            </div>
+        </div>
     </footer>
     
     <script>
