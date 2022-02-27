@@ -4,7 +4,7 @@ const path = require('path');
 app = express();
 
 var https = require("https");
-app.use(express.static("18.217.70.29"));
+app.use(express.static("PUBLIC"));
 app.use(express.json());
 app.set('view engine', 'ejs');
 app.get('/', function(req,res){
@@ -45,6 +45,6 @@ request.end();
 
 });
 const server = http.createServer(app);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 80;
 server.listen(port);
 console.debug('Server listening on port ' + port);
