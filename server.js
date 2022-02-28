@@ -2,9 +2,8 @@ const http = require('http');
 var express = require('express');
 const path = require('path');
 app = express();
-
 var https = require("https");
-app.use(express.static("PUBLIC"));
+app.use(express.static(path.join(__dirname, 'public/images')));
 app.use(express.json());
 app.set('view engine', 'ejs');
 app.get('/', function(req,res){
@@ -34,17 +33,15 @@ app.get('/', function(req,res){
             });
         
         });
-        res.render(__dirname + "/express/index", {my_repos : JSON.stringify(repos)});
+        res.render(__dirname + "/public/index", {my_repos : JSON.stringify(repos)});
     });
 });
 request.on('error', function(e) {
     console.error('and the error is '+e);
 });
 request.end();
-
-
 });
 const server = http.createServer(app);
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8080;
 server.listen(port);
 console.debug('Server listening on port ' + port);
