@@ -42,6 +42,6 @@ request.on('error', function(e) {
 request.end();
 });
 const server = http.createServer(app);
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 80;
 server.listen(port);
 console.debug('Server listening on port ' + port);
