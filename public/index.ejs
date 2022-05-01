@@ -72,63 +72,44 @@ body {font-family: "Lato", sans-serif}
         adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <div class="w3-row w3-padding-32">
         <div class="w3-center">
-            <img src="http://www.halimceylan.com:4040/photo.jpeg" class="w3-round w3-margin-bottom w3-center" alt="Random Name" style="width:40%">
+            <img src="../photo.jpeg" class="w3-round w3-margin-bottom w3-center" alt="Random Name" style="width:40%">
         </div>
 
         </div>
     </div>
 
     <!-- The Tour Section -->
+
     <div class="w3-black" id="github">
-        <script>
-            var my_repo = <%- JSON.stringify(my_repos)%>;
-            const myObj = JSON.parse(my_repo);
-            url = myObj[0]["url"];
-            url1 = myObj[1]["url"];
-            url2 = myObj[3]["url"];       
-            function golink1(url){window.open(url,'_blank','resizable=yes')}
-            function push(){
-            for(let i = 0; i <= 3; i++){
-            console.log(myObj[i]["lang"])
-            document.getElementById("name" + i).innerHTML=myObj[i]["name"];
-            document.getElementById("date" + i).innerHTML=new Date(myObj[i]["date"]).toDateString() 
-            document.getElementById("des" + i).innerHTML=myObj[i]["description"];
-            document.getElementById('make-image' + i).src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/" + myObj[i]["lang"].toLowerCase() + "/" + myObj[i]["lang"].toLowerCase() + ".png";
-            }
-            }
-            window.onload = function() {
-                push();
-            }
-        </script>
         <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
         <h2 class="w3-wide w3-center">Github</h2>
         <p class="w3-opacity w3-center"><i>Gözatabilirsin!</i></p><br>
         <div class="w3-row custom-flex w3-row-padding ">
             <div class="w3-third w3-margin-bottom" style="text-align: center ;">
-            <img id = "make-image0" src="" alt="New York" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
+            <img id = "make-image0" src="" alt="New York" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='../confused_developer.svg';">
             <div class="w3-container w3-white">
-                <p style="font-family: Jura;" ><b id = "name0"></b></p>
+                <p style="font-family: Jura;" ><b id = "name0"> </b></p>
                 <p id = "date0" class="w3-opacity"></p>
                 <p id = "des0" style="min-height: 100px;"></p>
                 <button class="w3-button w3-black w3-margin-bottom" onclick="golink(url)">Linke git</button>
             </div>
             </div>
             <div class="w3-third  w3-margin-bottom" style="text-align: center;">
-            <img id = "make-image1" src="" alt="Paris" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
+            <img id = "make-image1" src="" alt="Paris" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='../confused_developer.svg';">
             <div class="w3-container w3-white">
-                <p style="font-family: Jura;" ><b id = "name1"></b></p>
+                <p style="font-family: Jura;" ><b id = "name1"> </b></p>
                 <p id = "date1" class="w3-opacity"></p>
                 <p id = "des1" style="min-height: 100px;"></p>
-                <button class="w3-button w3-black w3-margin-bottom" onclick="golink1(url1)">Linke git</button>
+                <button class="w3-button w3-black w3-margin-bottom" onclick="golink(url1)">Linke git</button>
             </div>
             </div>
             <div class="w3-third w3-margin-bottom " style="text-align: center;">
-            <img id = "make-image2" src="" alt="San Francisco" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='https://www.codela.io/assets/img/confused_developer.svg';">
+            <img id = "make-image2" src="" alt="San Francisco" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='../confused_developer.svg';">
             <div class="w3-container w3-white">
-                <p style="font-family: Jura;" ><b id = "name2"></b></p>
+                <p style="font-family: Jura;" ><b id = "name2"> </b></p>
                 <p id = "date2" class="w3-opacity"></p>
                 <p id = "des2" style="min-height: 100px;"></p>
-                <button class="w3-button w3-black w3-margin-bottom" onclick="golink1(url2)">Linke git</button>
+                <button class="w3-button w3-black w3-margin-bottom" onclick="golink(url2)">Linke git</button>
             </div>
             </div>
         </div>
@@ -173,7 +154,6 @@ body {font-family: "Lato", sans-serif}
             mail: document.getElementById("mail").value,
             message: document.getElementById("mailmessage").value,
             };
-            console.log(templateParams)
             emailjs.send('my_website', 'template_j9cxvof', templateParams)
             .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
@@ -237,5 +217,24 @@ body {font-family: "Lato", sans-serif}
     }
     } 
     </script>
+        <script>
+            var my_repo = <%-JSON.stringify(my_repos)%>;
+            const myObj = JSON.parse(my_repo);
+            url = myObj[0]["url"];
+            url1 = myObj[1]["url"];
+            url2 = myObj[2]["url"];       
+            function golink(url){window.open(url,'_blank','resizable=yes')}
+            function push(){
+            for(let i = 0; i <= 2; i++){
+            document.getElementById("name" + i).innerHTML=myObj[i]["name"];
+            document.getElementById("date" + i).innerHTML=new Date(myObj[i]["date"]).toDateString() 
+            document.getElementById("des" + i).innerHTML=myObj[i]["description"];
+            document.getElementById('make-image' + i).src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/" + myObj[i]["lang"].toLowerCase() + "/" + myObj[i]["lang"].toLowerCase() + ".png";
+            }
+            }
+            window.onload = function() {
+                push();
+            }
+        </script>
     </body>
 </html>

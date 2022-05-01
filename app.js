@@ -22,7 +22,6 @@ app.get('/', function(req,res){
     response.on('end',function(){
         var json = JSON.parse(body);
         var repos =[];
-        console.log(json)
         json.forEach(function(repo){
             repos.push({
                 name : repo.name,
