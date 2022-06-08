@@ -1,18 +1,23 @@
 const http = require('http');
 var express = require('express');
+var fs = require('fs');
 const path = require('path');
+var MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt();
 app = express();
 var https = require("https");
-app.use(express.static(path.join(__dirname, 'public/images')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.set('view engine', 'ejs');
+require('dotenv').config();
 app.get('/', function(req,res){
   var userName='BayMorningstar';
   var options = {
     host :"api.github.com",
     path: "/users/" +userName+ "/repos",
     method : 'GET',
-    headers: {'User-Agent':'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'}
+    headers: {'User-Agent':'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)'},
+    auth: process.env.AUTH || "",
   }
   var request = https.request(options, function(response){
     var body = '';
@@ -32,7 +37,10 @@ app.get('/', function(req,res){
             });
         
         });
-        res.render(__dirname + "/public/index", {my_repos : JSON.stringify(repos)});
+        var path = __dirname + '/public/markdown/resume.md';
+        var file = fs.readFileSync(path, 'utf8');
+        var result = md.render(file);
+        res.render(__dirname + "/public/index", {my_repos : JSON.stringify(repos),resume :result});
     });
 });
 request.on('error', function(e) {
