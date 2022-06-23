@@ -127,6 +127,11 @@ body {font-family: "Lato", sans-serif}
                     <input id="resetBtn" class="w3-button w3-black w3-section w3-left" type="reset" value="Reset"></button>
             </form>
             </div>
+            <script>
+                var form = document.getElementById("mailSection");
+                function handleForm(event) { event.preventDefault(); } 
+                form.addEventListener('submit', handleForm);
+            </script>
 
             <div class="g-recaptcha" data-sitekey="6LeT34ceAAAAAEg4H3rYIrPF4yoMkvZZ1CQiwuqo"></div>
             <script type="text/javascript"
@@ -154,6 +159,7 @@ body {font-family: "Lato", sans-serif}
             });
             return false;
             }
+            
 }
             </script>
             
