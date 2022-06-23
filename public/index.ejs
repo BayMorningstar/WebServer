@@ -21,12 +21,17 @@ body {font-family: "Lato", sans-serif}
     <div class="w3-top">
     <div class="w3-bar w3-black w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large"></a>
         <a href="#benkimim" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Ben Kimim</a>
         <a href="#github" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Github </a>
         <a href="#iletisim" class="w3-bar-item w3-button w3-padding-large w3-hide-small">İletişim</a>
     </div>
     </div>
+
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+        <a href="#benkimim" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Ben Kimim</a>
+        <a href="#github" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Github</a>
+        <a href="#iletisim" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">İletisim</a>
+        </div>
 
     <div class="w3-container w3-content w3-center w3-padding-36" style="max-width:800px;margin-top:64px" id="benkimim" markdown=1>         
             <%-resume%>
@@ -56,36 +61,41 @@ body {font-family: "Lato", sans-serif}
     </div>
 
     <div class="w3-black" id="github">
-        <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+        <div class="w3-container w3-content w3-padding-32" >
         <h2 class="w3-wide w3-center">Github</h2>
         <p class="w3-opacity w3-center"><i>Gözatabilirsin!</i></p><br>
-        <div class="w3-row custom-flex w3-row-padding ">
-            <div class="w3-third w3-margin-bottom" style="text-align: center ;">
-            <img id = "make-image0" src="" alt="New York" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='../images/confused_developer.svg';">
-            <div class="w3-container w3-white">
-                <p style="font-family: Jura;" ><b id = "name0"> </b></p>
-                <p id = "date0" class="w3-opacity"></p>
-                <p id = "des0" style="min-height: 100px;"></p>
-                <button class="w3-button w3-black w3-margin-bottom" onclick="golink(url)">Linke git</button>
+        <div class="w3-row custom-flex w3-row-padding  ">
+            <div class="w3-third w3-padding-32" style="text-align: center ; ">
+                <div class="w3-hover-border-grey w3-padding-24 w3-white" style="border-radius:30px; border: 10px solid #FFFFFF ;" onclick="golink(url)">
+                    <img id = "make-image0" src="" alt="New York" style="width:50%; height: 30%; border-radius: 25px" class="w3-hover-opacity w3-margin" onError="this.src='../images/confused_developer_resized.png';">
+                    <div class="w3-container w3-white">
+                        <p><b id = "name0"> </b></p>
+                        <p id = "date0" class="w3-opacity"></p>
+                        <p id = "des0" style="min-height: 100px;"></p>
+                        <button class="w3-button w3-black w3-margin-bottom w3-padding-16" style="border-radius: 32px" onclick="golink(url)">Linke git</button>
+                    </div>
+                </div>
             </div>
+            <div class="w3-third w3-padding-32  " style="text-align: center; ">
+                <div class="w3-hover-border-grey w3-padding-24 w3-white" style="border-radius:30px; border: 10px solid #FFFFFF ;" onclick="golink(url1)">
+                    <img id = "make-image1" src="" alt="Paris" style="width:50%; height: 30%; border-radius: 25px " class="w3-hover-opacity w3-margin" onError="this.src='../images/confused_developer_resized.png';">
+                    <div class="w3-container w3-white">
+                        <p><b id = "name1"> </b></p>
+                        <p id = "date1" class="w3-opacity"></p>
+                        <p id = "des1" style="min-height: 100px;"></p>
+                        <button class="w3-button w3-black w3-margin-bottom w3-padding-16" style="border-radius: 32px" onclick="golink(url1)">Linke git</button>
+                    </div>
+                </div>
             </div>
-            <div class="w3-third  w3-margin-bottom" style="text-align: center;">
-            <img id = "make-image1" src="" alt="Paris" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='../images/confused_developer.svg';">
-            <div class="w3-container w3-white">
-                <p style="font-family: Jura;" ><b id = "name1"> </b></p>
-                <p id = "date1" class="w3-opacity"></p>
-                <p id = "des1" style="min-height: 100px;"></p>
-                <button class="w3-button w3-black w3-margin-bottom" onclick="golink(url1)">Linke git</button>
-            </div>
-            </div>
-            <div class="w3-third w3-margin-bottom " style="text-align: center;">
-            <img id = "make-image2" src="" alt="San Francisco" style="width:50%; height: 30%;" class="w3-hover-opacity w3-margin-bottom" onError="this.src='../images/confused_developer.svg';">
-            <div class="w3-container w3-white">
-                <p style="font-family: Jura;" ><b id = "name2"> </b></p>
-                <p id = "date2" class="w3-opacity"></p>
-                <p id = "des2" style="min-height: 100px;"></p>
-                <button class="w3-button w3-black w3-margin-bottom" onclick="golink(url2)">Linke git</button>
-            </div>
+            <div class="w3-third w3-padding-32 " style="text-align: center; ">
+                <div class="w3-hover-border-grey w3-padding-24 w3-white" style="border-radius:30px; border: 10px solid #FFFFFF ;" onclick="golink(url2)">
+                    <img id = "make-image2" src="" alt="San Francisco" style="width:50%; height: 30%; border-radius: 25px" class="w3-hover-opacity w3-margin" onError="this.src='../images/confused_developer_resized.png';">
+                    <div class="w3-container w3-white">
+                        <p><b id = "name2"> </b></p>
+                        <p id = "date2" class="w3-opacity"></p>
+                        <p id = "des2" style="min-height: 100px;"></p>
+                        <button class="w3-button w3-black w3-margin-bottom w3-padding-16" style="border-radius: 32px" onclick="golink(url2)">Linke git</button>
+                    </div></div>
             </div>
         </div>
         </div>
@@ -102,15 +112,22 @@ body {font-family: "Lato", sans-serif}
         </div>
         <div class="w3-col m6">
             <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <form id="mailSection" onsubmit={sendMail()} >
                 <div class="w3-half">
-                <input id = "name" class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-                </div>
-                <div class="w3-half">
-                <input id = "mail" class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-                </div>
+                    <label for="name">Name</label><br>
+                    <input id = "name" class="w3-input w3-border" type="text" placeholder="Full Name" required name="Name">
+                    </div>
+                    <label for="mail">Your Email</label><br>
+                    <div class="w3-half">
+                    <input id = "mail" class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                    </div>
+                    <label for="mailmessage">Your Message</label><br>
+                    <input id="mailmessage" class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                    <input id="submitBtn" class="w3-button w3-black w3-section w3-right" type="submit" value="Submit"></button>
+                    <input id="resetBtn" class="w3-button w3-black w3-section w3-left" type="reset" value="Reset"></button>
+            </form>
             </div>
-            <input id="mailmessage" class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-            <button class="w3-button w3-black w3-section w3-right" onclick="sendMail()"type="submit" value="Submit">SEND</button>
+
             <div class="g-recaptcha" data-sitekey="6LeT34ceAAAAAEg4H3rYIrPF4yoMkvZZ1CQiwuqo"></div>
             <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
@@ -122,6 +139,7 @@ body {font-family: "Lato", sans-serif}
             function sendMail(){
             if (grecaptcha.getResponse() == ""){
                 alert("please verify you are not a robot!");
+                return false;
             } else {
             var templateParams = {
             name : document.getElementById("name").value,
@@ -134,9 +152,9 @@ body {font-family: "Lato", sans-serif}
             }, function(error) {
             console.log('FAILED...', error);
             });
+            return false;
             }
 }
-          
             </script>
             
         </div>
@@ -189,7 +207,7 @@ body {font-family: "Lato", sans-serif}
             url = myObj[0]["url"];
             url1 = myObj[1]["url"];
             url2 = myObj[2]["url"];       
-            function golink(url){window.open(url,'_blank','resizable=yes')}
+            function golink(url){window.open(url)}
             function push(){
             for(let i = 0; i <= 2; i++){
             document.getElementById("name" + i).innerHTML=myObj[i]["name"];
