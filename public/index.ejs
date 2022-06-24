@@ -2,22 +2,121 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<title>My Website</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
-
+<head>
+    <title>Halim A. Ceylan</title>
+    <link rel="icon" type="image/x-icon" href="/images/icon.png">
+</head>
 <style>
+.alert>.start-icon {
+    margin-right: 0;
+    min-width: 20px;
+    text-align: center;
+}
+
+.alert>.start-icon {
+    margin-right: 5px;
+}
+
+.greencross
+{
+  font-size:18px;
+      color: #25ff0b;
+    text-shadow: none;
+}
+
+.alert-simple.alert-success
+{
+    background-color: rgba(7, 149, 66, 0.12156862745098039);
+    box-shadow: 0px 0px 2px #259c08;
+    color: #0ad406;
+  transition:0.5s;
+}
+.blue-cross
+{
+  font-size: 18px;
+    color: #0bd2ff;
+    text-shadow: none;
+}
+
+.alert-simple.alert-danger
+{
+    background-color: rgba(220, 17, 1, 0.16);
+    box-shadow: 0px 0px 2px #ff0303;
+    color: #ff0303;
+  transition:0.5s;
+}
+
+
+.danger
+{
+      font-size: 18px;
+    color: #ff0303;
+    text-shadow: none;
+}
+
+
+.alert:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: calc(100% - 44px);
+    border-left: 1px solid;
+    border-right: 2px solid;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    left: 0;
+    top: 50%;
+    transform: translate(0,-50%);
+      height: 20px;
+}
+
+.fa-times
+{
+-webkit-animation: blink-1 2s infinite both;
+	        animation: blink-1 2s infinite both;
+}
+
+
+/**
+ * ----------------------------------------
+ * animation blink-1
+ * ----------------------------------------
+ */
+@-webkit-keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
+@keyframes blink-1 {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
 .w3-row.custom-flex  {display: inline-flex; flex-wrap: wrap;}
 .w3-row.custom-flex.flex > .w3-col {flex: 1 0 290px;}
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
 </style>
 <body>
-
+   
     <div class="w3-top">
     <div class="w3-bar w3-black w3-card">
         <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -59,7 +158,6 @@ body {font-family: "Lato", sans-serif}
     
         </div>
     </div>
-
     <div class="w3-black" id="github">
         <div class="w3-container w3-content w3-padding-32" >
         <h2 class="w3-wide w3-center">Github</h2>
@@ -104,12 +202,49 @@ body {font-family: "Lato", sans-serif}
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
         <h2 class="w3-wide w3-center">İletişim Kur</h2>
         <p class="w3-opacity w3-center"><i>Gönder Gelsin</i></p>
+        <section class="Ok" style="visibility: hidden;">
+            <div class="container" style="margin-top: 16px;">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="alert fade alert-simple alert-success alert-dismissible text-left font__family-montserrat font__size-32 font__weight-light brk-library-rendered rendered show">
+                    <button type="button" class="close font__size-32" data-dismiss="alert">
+                                              <span aria-hidden="true"><a>
+                              <i class="fa fa-times greencross"></i>
+                              </a></span>
+                                              <span class="sr-only">Close</span> 
+                                          </button>
+                    <i class="start-icon far fa-check-circle faa-tada animated"></i>
+                    <strong class="font__weight-semibold">Well done!</strong> You successfully send your message !.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="NotOk" style="visibility: hidden ;" >
+            <div class="container" style="margin-top: -32px;">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="alert fade alert-simple alert-danger alert-dismissible text-left font__family-montserrat font__size-32 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
+                    <button type="button" class="close font__size-32" data-dismiss="alert">
+                                              <span aria-hidden="true">
+                                                  <i class="fa fa-times danger "></i>
+                                              </span>
+                                              <span class="sr-only">Close</span>
+                                          </button>
+                    <i class="start-icon far fa-times-circle faa-pulse animated"></i>
+                    <strong class="font__weight-semibold">Oh !</strong> Please verify you are not a robot.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
         <div class="w3-row w3-padding-32">
         <div class="w3-col m6 w3-large w3-margin-bottom">
             <i class="fa fa-map-marker" style="width:30px"></i> Muğla, TR<br>
             <i class="fa fa-phone" style="width:30px"></i> -<br>
             <i class="fa fa-envelope" style="width:30px"> </i> Email: halim.ceylan8@gmail.com<br>
         </div>
+        
         <div class="w3-col m6">
             <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
             <form id="mailSection" onsubmit={sendMail()} >
@@ -127,44 +262,8 @@ body {font-family: "Lato", sans-serif}
                     <input id="resetBtn" class="w3-button w3-black w3-section w3-left" type="reset" value="Reset"></button>
             </form>
             </div>
-            <script>
-                var form = document.getElementById("mailSection");
-                function handleForm(event) { event.preventDefault(); } 
-                form.addEventListener('submit', handleForm);
-            </script>
-
-            <div class="g-recaptcha" data-sitekey="6LeT34ceAAAAAEg4H3rYIrPF4yoMkvZZ1CQiwuqo"></div>
-            <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-            </script>
-            <script type="text/javascript">
-            (function(){
-                emailjs.init("user_e8xCHWu1s2nDC0ySNvUv0");
-            })(); 
-            function sendMail(){
-            if (grecaptcha.getResponse() == ""){
-                alert("please verify you are not a robot!");
-                return false;
-            } else {
-            var templateParams = {
-            name : document.getElementById("name").value,
-            mail: document.getElementById("mail").value,
-            message: document.getElementById("mailmessage").value,
-            };
-            emailjs.send('my_website', 'template_j9cxvof', templateParams)
-            .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            }, function(error) {
-            console.log('FAILED...', error);
-            });
-            return false;
-            }
-            
-}
-            </script>
-            
-        </div>
-        
+            <div class="g-recaptcha" data-sitekey="6LeT34ceAAAAAEg4H3rYIrPF4yoMkvZZ1CQiwuqo"></div>            
+        </div>  
         </div>
     </div>
     
@@ -181,6 +280,47 @@ body {font-family: "Lato", sans-serif}
             </div>
         </div>
     </footer>
+    <script>
+        var form = document.getElementById("mailSection");
+        function handleForm(event) { event.preventDefault(); } 
+        form.addEventListener('submit', handleForm);
+    </script>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+            </script>
+            <script type="text/javascript">
+            (function(){
+                emailjs.init("user_e8xCHWu1s2nDC0ySNvUv0");
+            })(); 
+            function sendMail(){
+            if (grecaptcha.getResponse() == ""){
+                document.getElementsByClassName("NotOk")[0].style.visibility="visible";
+                setTimeout(function() {
+                document.getElementsByClassName("NotOk")[0].style.visibility="hidden";
+                }, 2000);
+                return false;
+            } else {
+            var templateParams = {
+            name : document.getElementById("name").value,
+            mail: document.getElementById("mail").value,
+            message: document.getElementById("mailmessage").value,
+            };
+            emailjs.send('my_website', 'template_j9cxvof', templateParams)
+            .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+            console.log('FAILED...', error);
+            });
+            document.getElementsByClassName("Ok")[0].style.visibility="visible";
+            setTimeout(function() {
+            document.getElementsByClassName("Ok")[0].style.visibility="hidden";
+            }, 2000);
+
+            return false;
+            }
+            
+}
+            </script>
     
     <script>
     var myIndex = 0;
