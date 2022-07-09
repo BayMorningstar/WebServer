@@ -350,16 +350,16 @@ body {font-family: "Lato", sans-serif}
         <script>
             var my_repo = <%-JSON.stringify(my_repos)%>;
             const myObj = JSON.parse(my_repo);
-            url = myObj[0]["url"];
-            url1 = myObj[1]["url"];
-            url2 = myObj[2]["url"];       
+            url = myObj[0].clone_url;
+            url1 = myObj[1].clone_url;
+            url2 = myObj[2].clone_url;       
             function golink(url){window.open(url)}
             function push(){
             for(let i = 0; i <= 2; i++){
-            document.getElementById("name" + i).innerHTML=myObj[i]["name"];
-            document.getElementById("date" + i).innerHTML=new Date(myObj[i]["date"]).toDateString() 
-            document.getElementById("des" + i).innerHTML=myObj[i]["description"];
-            document.getElementById('make-image' + i).src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/" + myObj[i]["lang"].toLowerCase() + "/" + myObj[i]["lang"].toLowerCase() + ".png";
+            document.getElementById("name" + i).innerHTML=myObj[i].name;
+            document.getElementById("date" + i).innerHTML=new Date(myObj[i].updated_at).toDateString() 
+            document.getElementById("des" + i).innerHTML=myObj[i].description;
+            document.getElementById('make-image' + i).src="https://cdn.jsdelivr.net/npm/programming-languages-logos/src/" + myObj[i].language.toLowerCase() + "/" + myObj[i].language.toLowerCase() + ".png";
             }
             }
             window.onload = function() {

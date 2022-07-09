@@ -7,6 +7,7 @@
     },
     "dependencies": {
         "@emailjs/browser": "^3.4.0",
+        "@octokit/rest": "^19.0.3",
         "body-parser": "^1.19.2",
         "cookie-parser": "^1.4.6",
         "dotenv": "^16.0.1",
