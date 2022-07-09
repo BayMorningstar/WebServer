@@ -300,6 +300,7 @@ body {font-family: "Lato", sans-serif}
                 }, 2000);
                 return false;
             } else {
+            grecaptcha.reset();
             var templateParams = {
             name : document.getElementById("name").value,
             mail: document.getElementById("mail").value,
@@ -308,7 +309,7 @@ body {font-family: "Lato", sans-serif}
             emailjs.send('my_website', 'template_j9cxvof', templateParams)
             .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
-            grecaptcha.reset();
+
             }, function(error) {
             console.log('FAILED...', error);
             });
