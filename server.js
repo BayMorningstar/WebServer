@@ -6,9 +6,7 @@ var MarkdownIt = require('markdown-it'),
     md = new MarkdownIt();
 app = express();
 const { Octokit } = require("@octokit/rest");
-const octokit = new Octokit({
-  auth: process.env.AUTH,
-});
+const octokit = new Octokit();
 var https = require("https");
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
